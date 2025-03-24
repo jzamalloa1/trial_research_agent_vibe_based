@@ -9,6 +9,16 @@ An AI-powered tool for exploring drug approvals, clinical trials, and pharmaceut
 - **Multiple Data Sources**: Integrated FDA approvals, clinical trials, PubMed publications, and news
 - **Modern UI**: Dark mode, responsive design, and intuitive interface
 
+## ⚠️ Important API Notice
+
+**Warning**: The Clinical Trials API integration requires additional configuration to function correctly. The current implementation may encounter issues with query formatting and endpoint compatibility. Further development is needed to:
+
+1. Properly parse and format natural language queries for the Clinical Trials API
+2. Handle pagination and response formats correctly
+3. Implement more robust error handling for API-specific response codes
+
+If you encounter 404 errors or no results when querying clinical trials data, this is a known issue that needs to be addressed.
+
 ## Architecture
 
 This tool uses a combination of:
@@ -112,9 +122,11 @@ Example questions:
 ## Data Sources
 
 - FDA Drug Approval Database
-- ClinicalTrials.gov
+- ClinicalTrials.gov *(⚠️ API integration needs additional development - see warning above)*
 - PubMed
 - News and web sources
+
+When the Clinical Trials API fails, the system falls back to web search results, which may not be as comprehensive or structured as direct API data.
 
 ## Extending the System
 
@@ -123,6 +135,14 @@ The modular architecture makes it easy to extend:
 1. Add new data sources in the `api` directory
 2. Create new visualizations in the Streamlit app
 3. Enhance the AI agent with additional tools or capabilities
+
+## Known Issues
+
+1. **Clinical Trials API Integration**: The current implementation has issues properly formatting natural language queries for the ClinicalTrials.gov API. In many cases, 404 errors are returned because the API doesn't accept direct natural language questions as search parameters.
+
+2. **API Error Handling**: Error handling for Clinical Trials API still needs improvement. Currently, the system falls back to web search when API queries fail, which provides less structured data.
+
+3. **Query Generation**: The extraction of key terms from natural language queries needs refinement for better matching with the Clinical Trials API's expected parameters.
 
 ## License
 
