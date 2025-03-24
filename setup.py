@@ -1,0 +1,32 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="drug_approval_agent",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=[
+        "langchain",
+        "langchain-openai",
+        "langchain-community",
+        "openai",
+        "python-dotenv",
+        "pandas",
+        "numpy",
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "streamlit",
+        "streamlit-echarts",
+        "beautifulsoup4",
+        "requests",
+        "faiss-cpu",
+        "chromadb",
+        "pymupdf",
+        "tiktoken",
+        "pydantic",
+        "tqdm",
+        "lxml",
+        "fastapi",
+        "uvicorn"
+    ],
+) 

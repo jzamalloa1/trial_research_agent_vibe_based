@@ -1,0 +1,31 @@
+name: cursor_python_v2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - langchain
+    - langchain-openai
+    - langchain-community
+    - openai
+    - python-dotenv
+    - pandas
+    - numpy
+    - matplotlib
+    - seaborn
+    - plotly
+    - streamlit
+    - streamlit-echarts
+    - beautifulsoup4
+    - requests
+    - faiss-cpu
+    - chromadb
+    - pymupdf
+    - tiktoken
+    - pydantic
+    - tqdm
+    - lxml
+    - fastapi
+    - uvicorn 
